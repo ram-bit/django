@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devine</title>
+    <link rel="stylesheet" href="{% static 'style/index2.css' %}">
+</head>
+<body>
+    <section class="main-sect">
+    <section class="sub-sect">
+    <div class="form">
+    <form action="weather" method="get">
+        <input type="text" name="city" id="location" autocomplete="off" required>
+        <label for="city" class="label-name">
+            <span class="content-name">Name</span>
+        </label>
+        
+    </div>
+    
+    <input class="btn btn-1" type="submit" value="seach" required>
+    </form>
+    </section>
+</section>
+</body>
+</html>

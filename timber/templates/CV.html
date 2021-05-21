@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Ram Kabir</title>
+    <link rel="stylesheet" href="{% static 'style/CV.css' %}">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <div class="nameSect">
+                <h2 class="heading">Ram Kabir</h2>
+                <p class="text">Programmer</p>
+            </div>
+            <div class="cont">
+                <div id="down" class="download-resume" onclick="downloadResume()" style="cursor: pointer;">Download Resume</div>
+                <p class="email">ramkabir2816@gmail.com</p>
+                <p class="phone">(+91) 9625186822</p>
+            </div>
+        </div>
+        <div class="myWords">
+            <p class="text">Seeking a challenging and rewarding opportunity with an organization of repute which recognizes my true potential and effectively utilizes/nurtures my excellent analytical and technical skills in IT industry Software.</p>
+        </div>
+    </header>
+    <script>
+        
+            document.getElementById("down").onclick = function() {
+                location.href = "{% static 'media/Resume.pdf' %}"
+            }
+
+            function goToLinkdIn() {
+                location.href = ""
+            }
+            function goToGitHub() {
+                location.href = ""
+            }
+
+            function goToInsta() {
+                location.href = ""
+            }
+            function goToMyFolio() {
+                location.href = "{% url 'index' %}"
+            }
+
+            function goToWeather() {
+                location.href = "{% url 'index2' %}"
+            }
+    </script>
+
+    <section class="education">
+        <h3 class="heading">Education</h3>
+        <hr>
+        <div class="edu">
+            <div class="course">
+                <div>
+                    <p class="text">B.Tech</p>
+                </div>
+                <div>
+                    <p class="text">HSC</p>
+                </div>
+                <div>
+                    <p class="text">SSC</p>
+                </div>
+            </div>
+    
+            <div class="grade">
+                <div>
+                    <p class="text">CSE (Pursuing 6th Sem)</p>
+                </div>
+                <div>
+                    <p class="text">83.16%</p>
+                </div>
+                <div>
+                    <p class="text">74.6%</p>
+                </div>
+            </div>
+    
+            <div class="institute">
+                <div>
+                    <p class="text">ShriRam College Of Engineering and Management. Affiliated to Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal, M.P.</p>
+                </div>
+                <div>
+                    <p class="text">CBS HS School, MPBSE</p>
+                </div>
+                <div>
+                    <p class="text">CBS HS School, MPBSE</p>
+                </div>
+            </div>
+            <div class="yearOfPassing">
+                <div>
+                    <p class="text">June 2022</p>
+                </div>
+                <div>
+                    <p class="text">May 2016</p>
+                </div>
+                <div>
+                    <p class="text">March 2018</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <!---Achievment--->
+    <section class="achievement">
+        <h3 class="heading">Achievement</h3>
+        <hr>
+        <ul class="achieved">
+            <li>Ist Year Topper in College</li>
+            <li>Participated and Qualify 'C' Programming Quiz organized By Oriol Infotech.</li>
+            <li>Attended Technical Workshop on Python Programming at IITB</li>
+            <li>Attended Technical Workshop on Python Programming at MITS, Madhya Pradesh.</li>
+            <li>Participated actively in TechZonasa event held at ShreeRam College of Engineering and Management, Madhya Pradesh.</li>
+            <li>Stood 1st in Mathematics & Science during SSC & HSC.</li>
+        </ul>
+    </section>
+
+    <!--Pro-Qualities-->
+    <section class="quality">
+        <h3 class="heading">Professional Qualities</h3>
+        <hr>
+        <ul class="qualities">
+            <li>A detail oriented, hardworking person with exceptional programming skills pursuing Bachelor of Technology in computer science engineering degree in Computer.</li>
+            <li>Skilled in programming languages and using them for software developing.</li>
+            <li>Proficient in maintaining the existing program with implementation of new techniques.</li>
+            <li>Skilled in leading the team from the front.</li>
+            <li>Remarkable ability in executing the plan with precision.</li>
+        </ul>
+    </section>
+
+    <!--known-Techs-->
+    <section class="tech">
+        <h3 class="heading">Tech Skills</h3>
+        <hr>
+        <ul class="lang">
+            <li>Programming Languages: C/C++, C#, Java</li>
+            <li>Scripting Language: Python, Ruby, JavaScript</li>
+            <li>Markup Language: HTML5, PHP, ASP.NET</li>
+            <li>Backend: Django, style="cursor: pointer;SQL, CSS3</li>
+            <li>Tool Known:</li>
+        </ul>
+        <ul class="tool">
+            <li>GIT</li>
+            <li>Linux[GCC]</li>
+            <li>Windows 98/XP/7/8/10</li>
+            <li>MS Office 2007/2016/2019</li>
+            <li>Prezi</li>
+            <li>Virtual Box</li>
+            <li>VS code++</li>
+            <li>CodeBlocks</li>
+            <li>Anaconda IDLE</li>
+            <li>Spyder IDE</li>
+            <li>Eclipse IDE</li>
+            <li>Jupyter Notebook</li>
+        </ul>
+    </section>
+    <section class="project">
+        <h3 class="heading">Personal Project</h3>
+        <hr>
+        <h2 class="heading"><li onclick="goToMyFolio()" style="cursor: pointer;">My Folio</li></h2>
+        <h2 class="heading"><li onclick="goToWeather()" style="cursor: pointer;">Django Weather data Extraction web app</li></h2>
+    </section>
+
+    <!--Personal-Quantities-->
+
+    <section class="perqualities">
+        <h3 class="heading">Personal Qualities</h3>
+        <hr>
+        <ul>
+        <li>Smart Worker</li>
+        <li>Listening Skills</li>
+        <li>Communication</li>
+        <li>Excelent skills in written</li>
+        <li>Adaptable in any working environment</li>
+        <li>Willingness to learn new things</li>
+        <li>Focused on Work</li>
+    </ul>
+    </section>
+
+    <!--language-->
+    <section class="langKnown">
+        <h3 class="heading">Languages</h3>
+        <hr>
+        <div>
+            <p class="text">Hindi: Native Language</p>
+            <p class="text">English: Speaker, Advanced Reading and Writting.</p>
+        </div>
+    </section>
+    
+    <!--Certifiacations-->
+    <section class="certification">
+        <h3 class="heading">Certificates</h3>
+        <hr>
+        <ul class="certificate">
+            <li><a href="https://coursera.org/share/43c7b49a4bc8f7644adfc006980f222f" target="_blank">Certified Course Programming for Everybody (Getting Started with Python) offered by University of Michigan</a></li>
+            <li><a href="https://coursera.org/share/23cf49a24c4b0dabe2634865613230ae" target="_blank">Certified Course  Python Data Structures offered by University of Michigan.</a></li>
+            <li><a href="https://coursera.org/share/92ef4056cce64b40d0cc570757ca77f2" target="_blank">Certified Course Using Python to Access Web Data offered by University of Michigan</a></li>
+            <li><a href="https://coursera.org/share/b769fe4c2294deb7971ddef6ab6b25dc" target="_blank">Certified Course Using Databases with Python offered by University of Michigan</a></li>
+            <li><a href="https://coursera.org/share/89399e5763f8275244b3d2aaa9251aba" target="_blank">Certified Course Capstone: Retrieving, Processing, and Visualizing Data with Python offered by University of Michigan</a></li>
+            <li><a href="https://coursera.org/share/5b7282da98c1d50a2999d25c3068bf03" target="_blank">Certified Course Web Application Technologies and Django offered by University of Michigan</a></li>
+            <li><a href="https://coursera.org/share/641c6e5dec93220c8faacd7dfd13206c" target="_blank">Certified Course Building Web Application in Django offered by University of Michigan</a></li>
+            <li><a href="#" target="_blank">Certified with ‘C’ Programming Quiz Qualified, organized By Oriol Infotech.</a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1081-4127618/pdf/" target="_blank">Certified Ruby Tutorial Completion</a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1059-4127618/pdf/" target="_blank">Certified PHP Tutorial Completion</a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1051-4127618/pdf/" target="_blank">Certified C++ Tutorial Completion</a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1060-4127618/pdf/" target="_blank">Certified SQL Tutorial Completion</a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1068-4127618/pdf/" target="_blank">Certified Java Tutorial Completion</a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1073-4127618/pdf/" target="_blank">Certified Python 3 Tutorial Completion </a></li>
+            <li><a href="https://www.sololearn.com/Certificate/1089-4127618/pdf/" target="_blank">Certified C Tutorial Completion</a></li>
+        </ul>
+
+    </section>
+    
+    <!--Hobbies-->
+    <section class="hobbies">
+        <h3 class="heading">Hobbies</h3>
+        <hr>
+        <ul>
+        <li>Reading about new technology</li>
+        <li>Travelling</li>
+        <li>Singing</li>
+        <li>Extempore</li>
+        <li>Teaching</li>
+    </ul>
+    </section>
+
+    <!--Social-Conatact-->
+    <section class="social">
+        <h3 class="heading">Contact</h3>
+        <hr>
+        <div>
+        <div class="linkedIn">
+            <div><p class="cont">LinkedIn/</p></div>
+            <div><p class="cont" onclick="goToLinkdIn()">ram-kabir-2816aug</p></div>
+        </div>
+        <div class="gitHub">
+            <div><p class="cont">Git-hub/</p></div>
+            <div><p class="cont" onclick="goToGitHub()">ram-bit</p></div>
+        </div>
+        <div class="insta">
+            <div><p class="cont">instagram/</p></div>
+            <div><p class="cont" onclick="goToInsta()">ram_kabir</p></div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

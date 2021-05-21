@@ -1,0 +1,236 @@
+{% load static %}
+
+<!-- {% static 'media' as media %}--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/index.css' %}">
+    <style>
+        .about .imgBx
+        {
+            background-image: url({% static '/media/window.jpg' %});
+        }
+        .imgBx2 {
+            background-image: url({% static '/media/bg2.jpg' %});
+        }
+        .redbg
+        {
+            background: url({% static '/media/red.jpg' %}) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <header>
+            <a href="#about" class="logo">Ram Kabir</a>
+            <div id="toggling" class="overlay" style="width: 0%;">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a href="#about" onclick="closeNav()">About</a>
+                    <a href="#services" onclick="closeNav()">Services</a>
+                    <a href="#project" onclick="closeNav()">My Projects</a>
+                    <a href="#cont" onclick="closeNav()">Contact</a>
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer;position:fixed;left:90%" onclick="openNav()">&#9776;</span>
+
+<script>
+    
+function openNav() {
+  document.getElementById("toggling").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("toggling").style.width = "0%";
+}
+
+function change() {
+    document.getElementById("img2").style.display = "none";
+}
+function back() {
+    document.getElementById("img2").style.display = "block";
+}
+function changed() {
+    document.getElementById("img").style.display = "none";
+    document.getElementById("txt").style.display = "block";
+    document.getElementById("ofcd").style.marginTop = "90px"
+}
+function backf() {
+    document.getElementById("img").style.display = "block";
+    document.getElementById("txt").style.display = "none";
+    
+}
+
+
+////////////////////////////////////////
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length} ;
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+        </header>
+        <img src="{% static '/media/bg (1).jpg' %}" alt="background" id="img1" onfocus="change()">
+        <div class="content">
+            <h2>Success by Design</h2>
+            <p>This modern time of digitalization can become more and more helpful for our citizens by our special efforts.I can plan and develop new codes to make your work more easy and simple.I can think both logically and statistically.</p>
+        </div>
+    </div>
+    <section id="about" class="about">
+        <div class="contentBx">
+            <h2 class="heading">About me</h2>
+            <p class="text">
+            A detail oriented, hardworking person with exceptional programming skills pursuing Bachelor of Technology in computer science engineering degree in Computer.
+            Skilled in programming languages and using them for software developing.
+            Proficient in maintaining the existing program with implementation of new techniques.
+            Skilled in leading the team from the front.
+            Remarkable ability in executing the plan with precision.
+            </p>
+        </div>
+        <div class="imgBx"></div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="heading">Services</h2>
+        <p class="text">The top most priorities I looked for when developing or doing something.</p>
+        <div class="container">
+            <div class="serviceBx">
+                <div>
+                    <img src="{% static '/media/icon1.png' %}" alt="icon1">
+                    <h2>Design</h2>
+                </div>
+            </div><div class="serviceBx">
+                <div>
+                    <img src="{% static '/media/icon2.png' %}" alt="icon2">
+                    <h2>Development</h2>
+                </div>
+            </div><div class="serviceBx">
+                <div>
+                    <img src="{% static '/media/icon3.png' %}" alt="icon3">
+                    <h2>Branding</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technology">
+        <div class="contentBx">
+            <h2 class="heading">use cutting edge technology</h2>
+            <p class="tect">technology at the frontiers of knowledge. Techniques or achievements that employ the most current and high-level IT developments</p>
+        </div>
+        <div class="imgBx">
+            <img src="{% static '/media/tech.png' %}" alt="tech">
+        </div>
+    </section>
+
+    <section id="project" class="project">
+        <h2 class="heading">My Projects</h2>
+        <p class="text"></p>
+    <div class="imgBx">
+        <div class="mySlides fade">
+            <!----<div class="numbertext">1 / 2</div>-->
+            <img src="{% static '/media/weathering.jpg' %}" style="width:25%">
+            <div class="cap"><a href="{% url 'index2' %}" style="color: beige;">Django Weather data Extraction App</a></div>
+          </div>
+          <div class="mySlides fade" style="display: none;">
+            <!----<div class="numbertext">2 / 2</div>-->
+            <img src="{% static '/media/ram.jpg' %}" style="width:25%">
+            <div class="cap"><a href="{% url 'index' %}" style="color: beige;">My Folio</a></div>
+          </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="heading">My Favourite Quotes, I inspired by</h2>
+        <div class="container">
+            <div class="contentBx">
+                <div>
+                    <p>“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”</p><br>
+                    <h3> – Martin Fowler</h3>
+                </div>
+            </div>
+            <div class="contentBx">
+                <div>
+                    <p>“When to use iterative development? You should use iterative development only on projects that you want to succeed.”</p><br>
+                    <h3> – Martin Fowler</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cont" class="contact">
+        <h2 class="heading">Contact Me</h2>
+        <p class="text">I loved to work with you, please Contact me for any freelancing service.</p>
+        <div id="cv" class="resume" onclick="downloadResume()" style="display: flex;">
+            <h3 style="margin-top: 12px;">Resume</h3> <a href="{% url 'cv' %}"><img src="{% static '/media/arrow.png' %}" width="50" height="50" ></a>
+        </div>
+        
+    </section>
+    <section class="about">
+        <div class="contentBx redbg">
+            <div class="form">
+                <form action="{% url 'contact' %}" method="POST">
+                   {% csrf_token %}
+                <div class="inputBx">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="inputBx">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="inputBx">
+                    <input type="text" name="mobile" placeholder="Mobile No." >
+                </div>
+                <div class="inputBx">
+                    <textarea  name="message" placeholder="Write your message here..." ></textarea>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" value="send">
+                </div>
+            </form>
+
+            </div>
+        </div>
+        <div class="imgBx2"></div>
+    </section>
+
+    <section class="footer">
+        <p class="text">Design by Kabir</p>
+        <ul>
+            <p class="text">Follow me on:</p>
+            <li><a href="https://www.linkedin.com/in/ram-kabir-2816aug/" target="_blank"><img src="{% static '/media/linkedin.png' %}"></a></li>
+            <li><a href="https://www.facebook.com/ram.kabir.2816" target="_blank"><img src="{% static '/media/facebook.png' %}"></a></li>
+            <li><a href="https://twitter.com/Ramkabir7" target="_blank"><img src="{% static '/media/twitter.png' %}"></a></li>
+        </ul>
+    </section>
+</body>
+</html>

@@ -1,0 +1,99 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.name
+{
+    padding: 8px;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name .cont #down
+{
+    background: #F3904F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.download-resume
+{
+    cursor:pointer;
+}
+.myWords
+{
+    margin: 10px;
+    text-align: center;
+}
+
+
+.education .heading,.achievement .heading, .quality .heading, .tech .heading, .project .heading, .perqualities .heading, .langKnown .heading,
+.certification .heading, .hobbies .heading, .social .heading
+{
+    margin-top: 14px;
+}
+
+.education .edu
+{
+    margin-top: 14px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.education .edu  .text
+{
+    margin-bottom: 10px;
+}
+
+
+
+.achievement .achieved li,.quality .qualities li, .tech .lang li, .perqualities li,
+.certification .certificate li, .hobbies li
+{
+    margin-top: 10px;
+    list-style:disc;
+    margin-left: 20px;
+}
+
+.langKnown p
+{
+    margin-left: 40px;
+    margin-top: 12px;
+
+}
+
+.tech .tool li
+{
+    margin-top: 10px;
+    list-style:disc;
+    margin-left: 100px;
+}
+
+.social div
+{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 991px)
+{
+    .social div
+{
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+}

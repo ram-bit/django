@@ -1,0 +1,140 @@
+{% load static %}
+{% static "media/icons" as baseUrl %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/weather-ui.css' %}">
+    <title>weather-ui</title>
+</head>
+<body>
+    <section class="weth">
+
+        <div class="location">
+            <div class="city">{{weath.city}}</div>
+            <div id="day-time" class="day-time">Day, Time</div>
+            <div class="weather-type">{{weath.weather}}</div>
+        </div>
+        <div class="temperature">
+            <div class="svg"><object type="image/svg+xml" data="{{baseUrl}}/{{weath_path.0}}" width="80" height="80"></object></div>
+            <div class="temp">
+                <span id="cel" class="value" >{{celsius}}</span>
+                <span id="fah" class="value" style="display: none;">{{fahrenheit}}</span>
+                <span class="cel-fer">
+                    <span id="celc" class="celcius" style="border:none; cursor:default; color:rgba(0, 0, 0, 1)" onclick="celsi()">°C</span> |
+                    <span id="fahr" class="fahrenheit" style="border:none; cursor: pointer; color:rgba(0, 0, 0, 0.4)"onclick="fahren()">°F</span>
+                </span>
+            </div>
+        </div>
+
+        
+        <!--
+        <div class="preseption">
+            <div class="precipitation">Precipitation: __%</div>
+            <div class="humidity">Humidity: __%</div>
+            <div class="wind">Wind: __km/hr</div>
+        </div>
+        -->
+        <div class="ui-cards">
+
+            <div class="check-time">
+                <!--Size dropdown menu-->
+                <div class="wrapper">
+                    <div class="menu">
+                        <select id="time_select" class="time">
+                            <option value="morning">Morning</option>
+                            <option value="afternoon">Afternoon</option>
+                            <option value="evening">Evening</option>
+                            <option value="overnight">OverNight</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Size dropdown content-->
+                <div class="b">
+                    <div class="blank"></div>
+                    {% for times, tempes in result %}
+                    <div id="{{times}}" class="content">
+                        <div class="time-slot">
+                            <div class="temperate">{{tempes}}°C</div>
+                            {% if a == 100 %}
+                            <div class="svg"><object type="image/svg+xml" data="{{baseUrl}}/{% cycle weath_path.1 weath_path.2 weath_path.3 weath_path.4 %}" width="80" height="80"></object></div>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        function fahren() {
+            document.getElementById("fah").style.display = "block";
+            document.getElementById("cel").style.display = "none";
+            document.getElementById("celc").style.color = "rgba(0, 0, 0, 0.4)";
+            document.getElementById("fahr").style.color = "rgba(0, 0, 0, 1)";
+            document.getElementById("fahr").style.cursor = "default"
+            document.getElementById("celc").style.cursor = "pointer"
+            //style="display: none;"
+          };
+          function celsi() {
+            document.getElementById("cel").style.display = "block";
+            document.getElementById("fah").style.display = "none";
+            document.getElementById("fahr").style.color = "rgba(0, 0, 0, 0.4)";
+            document.getElementById("celc").style.color = "rgba(0, 0, 0, 1)";
+            document.getElementById("fahr").style.cursor = "default"
+            document.getElementById("celc").style.cursor = "pointer"
+            //style="display: none;"
+          };
+        $(document).ready(function(){
+            $("#time_select").on('change', function(){
+                $(".content").hide();
+                $("#" +$(this).val()).fadeIn(700);
+            }).change();
+            
+        });
+        const date = new Date();
+const day = date.getDay();
+
+let hours = date.getHours();
+
+const format = hours >= 12 ? "PM" : "AM";
+if (hours > 12) {
+hours = Math.abs(hours - 12);
+}
+
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+
+const weekDays = [
+"Sunday",
+"Monday",
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Friday",
+"Saturday",
+];
+
+console.log(
+`Today is : ${weekDays[day]}\nCurrent Time is : ${hours}:${minutes}:${seconds} ${format}\n`
+);
+
+document.getElementById("day-time").innerHTML = `${weekDays[day]}, ${hours}:${minutes}:${seconds} ${format}\n`;
+    </script>
+
+    <section class="footer">
+        <p class="text">Design by Kabir</p>
+        <ul>
+            <p class="text">Follow me on:</p>
+            <li><a href="https://www.linkedin.com/in/ram-kabir-2816aug/" target="_blank"><img src="{% static '/media/linkedin.png' %}"></a></li>
+            <li><a href="https://www.facebook.com/ram.kabir.2816" target="_blank"><img src="{% static '/media/facebook.png' %}"></a></li>
+            <li><a href="https://twitter.com/Ramkabir7" target="_blank"><img src="{% static '/media/twitter.png' %}"></a></li>
+        </ul>
+    </section>
+</body>
+</html>
