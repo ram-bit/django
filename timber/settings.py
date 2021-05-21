@@ -27,7 +27,7 @@ SECRET_KEY = '=hx2h73hkr2u6pmfnhx&i*2fj!$tkl$fhhws8ytgwgo#vplf&3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://folio-django.herokuapp.com/']
 
 
 # Application definition
